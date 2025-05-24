@@ -3,83 +3,85 @@
 @tailwind utilities;
 
 :root {
-  --primary-50: #EFF6FF;
-  --primary-100: #DBEAFE;
-  --primary-200: #BFDBFE;
-  --primary-300: #93C5FD;
-  --primary-400: #60A5FA;
-  --primary-500: #3B82F6;
-  --primary-600: #2563EB;
-  --primary-700: #1D4ED8;
-  --primary-800: #1E3A8A;
-  --primary-900: #1E3A8A;
+  /* Dark theme colors */
+  --primary-50: #1A1A2E;
+  --primary-100: #16213E;
+  --primary-200: #0F3460;
+  --primary-300: #533483;
+  --primary-400: #E94560;
+  --primary-500: #11468F;
+  --primary-600: #1597BB;
+  --primary-700: #1B2430;
+  --primary-800: #51557E;
+  --primary-900: #816797;
   
-  --secondary-50: #F0FDFA;
-  --secondary-100: #CCFBF1;
-  --secondary-200: #99F6E4;
-  --secondary-300: #5EEAD4;
-  --secondary-400: #2DD4BF;
-  --secondary-500: #14B8A6;
-  --secondary-600: #0D9488;
-  --secondary-700: #0F766E;
-  --secondary-800: #115E59;
-  --secondary-900: #134E4A;
+  --secondary-50: #222831;
+  --secondary-100: #30475E;
+  --secondary-200: #F05454;
+  --secondary-300: #FFA500;
+  --secondary-400: #FFD93D;
+  --secondary-500: #6C5B7B;
+  --secondary-600: #355C7D;
+  --secondary-700: #2A2438;
+  --secondary-800: #352F44;
+  --secondary-900: #5C5470;
   
-  --accent-50: #FFFBEB;
-  --accent-100: #FEF3C7;
-  --accent-200: #FDE68A;
-  --accent-300: #FCD34D;
-  --accent-400: #FBBF24;
-  --accent-500: #F59E0B;
-  --accent-600: #D97706;
-  --accent-700: #B45309;
-  --accent-800: #92400E;
-  --accent-900: #78350F;
+  --accent-50: #2C3333;
+  --accent-100: #395B64;
+  --accent-200: #A5C9CA;
+  --accent-300: #E7F6F2;
+  --accent-400: #FFB84C;
+  --accent-500: #F16767;
+  --accent-600: #A459D1;
+  --accent-700: #392467;
+  --accent-800: #5D3587;
+  --accent-900: #251749;
   
-  --success-500: #10B981;
-  --warning-500: #F59E0B;
-  --error-500: #EF4444;
+  --success-500: #4CAF50;
+  --warning-500: #FF9800;
+  --error-500: #F44336;
   
-  --neutral-50: #F9FAFB;
-  --neutral-100: #F3F4F6;
-  --neutral-200: #E5E7EB;
-  --neutral-300: #D1D5DB;
-  --neutral-400: #9CA3AF;
-  --neutral-500: #6B7280;
-  --neutral-600: #4B5563;
-  --neutral-700: #374151;
-  --neutral-800: #1F2937;
-  --neutral-900: #111827;
+  --neutral-50: #1a1a1a;
+  --neutral-100: #262626;
+  --neutral-200: #333333;
+  --neutral-300: #404040;
+  --neutral-400: #666666;
+  --neutral-500: #808080;
+  --neutral-600: #999999;
+  --neutral-700: #b3b3b3;
+  --neutral-800: #cccccc;
+  --neutral-900: #e6e6e6;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply bg-neutral-900 text-neutral-100;
 }
 
 .auth-grid-pattern {
-  background-image: radial-gradient(var(--neutral-300) 1px, transparent 1px);
+  background-image: radial-gradient(var(--neutral-700) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50;
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 shadow-lg hover:shadow-primary-500/50;
   }
   
   .btn-secondary {
-    @apply bg-secondary-600 hover:bg-secondary-700 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-opacity-50;
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-opacity-50 shadow-lg hover:shadow-secondary-500/50;
   }
   
   .btn-accent {
-    @apply bg-accent-600 hover:bg-accent-700 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-opacity-50;
+    @apply bg-accent-600 hover:bg-accent-700 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-opacity-50 shadow-lg hover:shadow-accent-500/50;
   }
   
   .card {
-    @apply bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden transition-all duration-200 ease-in-out;
+    @apply bg-neutral-800 rounded-lg shadow-lg backdrop-blur-lg border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300;
   }
   
   .input {
-    @apply bg-neutral-100 dark:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 transition-all duration-200 ease-in-out;
+    @apply bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 transition-all duration-200 ease-in-out text-neutral-100 placeholder-neutral-400;
   }
 
   .verified-badge {
@@ -89,10 +91,18 @@ body {
   .blockchain-verified {
     @apply flex items-center text-success-500 text-sm;
   }
+
+  .tab-active {
+    @apply bg-primary-600 text-white;
+  }
+
+  .tab-inactive {
+    @apply bg-neutral-700 text-neutral-300 hover:bg-neutral-600;
+  }
 }
 
 .loading-shimmer {
-  background: linear-gradient(90deg, var(--neutral-200) 0%, var(--neutral-100) 50%, var(--neutral-200) 100%);
+  background: linear-gradient(90deg, var(--neutral-800) 0%, var(--neutral-700) 50%, var(--neutral-800) 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
@@ -119,4 +129,22 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Glass morphism effects */
+.glass {
+  @apply bg-neutral-800/30 backdrop-blur-md border border-neutral-700/50;
+}
+
+.glass-hover {
+  @apply hover:bg-neutral-700/50 transition-all duration-300;
+}
+
+/* Glow effects */
+.glow {
+  @apply shadow-lg shadow-primary-500/20;
+}
+
+.glow-hover {
+  @apply hover:shadow-xl hover:shadow-primary-500/30 transition-all duration-300;
 }
